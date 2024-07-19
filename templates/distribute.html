@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribution page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Paste provided CSS here */
+        /* Importing fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Applying custom font */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Container for login form */
+        .login-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            margin-top: 130px;
+            box-shadow: #000108;
+        }
+
+        /* Form heading */
+        .login-container h2 {
+            font-size: 28px;
+            font-weight: 500;
+            border-left: 8px solid #303054;
+            padding: 5px 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Form fields */
+        .login-container input[type="text"],
+        .login-container input[type="password"],
+        .login-container input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Form fields focus */
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus {
+            box-shadow: 0 0 5px rgba(48, 48, 84, 0.5);
+        }
+
+        /* Login button */
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #303054;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Login button hover */
+        .login-container input[type="submit"]:hover {
+            background-color: #e6edff;
+            color: #303054;
+        }
+        #donation{
+    height: 50px;
+    width: 100%;
+    padding: 0px 5px;
+    border: none;
+    outline: none;
+    border: 1px solid rgb(206, 212, 218);
+    border-radius: 5px;
+    color: rgb(73, 80, 87);
+    font-weight: 400;
+}
+    </style>
+</head>
+<body>
+    <div style="margin-top: 50px;">
+        <center style="color: rgb(7, 247, 47);">{{stat}}</center>
+    </div>
+    <div class="login-container" >
+        <h2>Distribute</h2><br>
+        <form action="/distribute" method="get">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="phone" placeholder="Phone" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="id" value="{{data}}" required hidden>
+            <select name="donation" id="donation">
+                <option value="">Choose Donation or Wastage</option>
+                <option value="food">Food</option>
+                <option value="clothes">Clothes</option>
+                <option value="footware">Footware</option>
+                <option value="books">Books</option>
+                <option value="fund">Fund</option>
+                <option value="gadget">Ele. Gadgets</option>
+            </select><br><br>
+            <input type="submit" value="Distribute">
+        </form>        
+    </div>
+</body>
+</html>
